@@ -1,0 +1,422 @@
+/*================================*/
+/*         Global Settings        */
+/*================================*/
+
+*,::before,::after {
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+}
+a {
+	text-decoration: none;
+	color: black;
+}
+.fas {
+    position: relative;
+    color: darkblue;
+}
+.fab::before {
+    position: relative;
+    color: red;
+}
+iframe {
+	border: 2px solid green ;
+	width: 100%;
+	height: 100vh;
+}
+ul, li {
+	transition: all .25s;
+}
+button, a {
+	color: inherit;
+	text-decoration: none;
+	border-radius: 7px;
+	margin: 0;
+	padding: 3px 5px;
+	border: thin solid;
+	transition: all .3s;
+}
+button:hover {
+	cursor: pointer;
+}
+body {
+	background-color: rgb(189,183,107,.1);
+}
+.wrapper {
+	box-sizing: border-box;
+	height: 100vh;
+	width: 95vw;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 100px 1fr 50px;
+	padding: 20px 30px 0 30px;
+}
+/*================================*/
+/*         Header Settings        */
+/*================================*/
+header {
+	display: flex;
+	align-items:center;
+	border-bottom: thin solid darkgray;
+}
+.headerLeft{
+    /*border: thin solid;*/
+	flex: 1;
+	height:100%;
+	position: relative;
+	display: flex;
+	/*align-items: center;*/
+	/*justify-content: start;*/
+	overflow: hidden;
+	
+}
+.headerRight {
+    /*border: thin solid;*/
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: space-around;
+	/*flex-wrap: wrap;*/
+	height: 100%;
+}
+.headerRight a {
+	border: 3px outset;
+	min-width:130px;
+	text-decoration: none;
+	text-align: center;
+	color: black;
+	font: 1rem 'sans-serif';
+	font-weight: bold;
+	padding: 5px;
+	background-color: rgb(125,117,8,.1);
+	border-radius: 7px;
+}
+.headerRight a:hover {
+	background-color: rgb(125,117,8,1);
+	color: silver;
+}
+/*============================*/
+/*         Header Logo        */
+/*============================*/
+.h1contain {
+	position: relative;
+	width: 600px;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	z-index: 20;
+}
+.h1contain h1 {
+	margin: 0!important;
+	padding: 0!important;
+	font-size: clamp(24px,4vw,56px);
+}
+.h1contain a {
+	border: none;
+	padding: none;
+	margin: none;
+	position: relative;
+}
+.headerLogo1, .headerLogo2 {
+	position: absolute;
+	top: 0;
+	margin: 0;
+	padding: 0;
+}
+.headerLogo1 {
+	z-index: 10;
+	left: 0;
+	background: linear-gradient(119deg, goldenrod 45px, #ffed89 65px,goldenrod 85px);
+    background-position-x: -60px;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: 10s ease-in .1s infinite colors;
+}
+.headerLogo2 {
+    left: -5px;
+    color: transparent;
+    z-index: 5;
+}
+ @keyframes colors {
+   0% {background-position-x: -30px}
+   100% {background-position-x: 530px}
+ }
+/*===============================*/
+/*    Main section Settings      */
+/*===============================*/
+main {
+	display: grid;
+	grid-template-columns: 350px 1fr;
+	flex-wrap: wrap;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+/*===================================*/
+/*  fa-icons.html > aside Settings   */
+/*===================================*/
+aside {
+	overflow: auto;
+}
+.menuItems {
+	height: 90%;
+	min-height:425px;
+	max-height:75vh;
+	/*max-height:525px;*/
+    position: -webkit-sticky;
+    position: sticky;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: auto;
+}
+.iconSearch {
+	display: flex;
+	align-items: center;
+	background-color:darkkhaki;
+	padding: 4px;
+	border-radius: .5rem .5rem 0 0;
+}
+.iconSearch span {
+	background-color:rgb(100,149,237,.2);
+	padding-right: 5px;
+	font-size: inherit;
+	padding: 1px 2px 1px 4px;
+	border-radius: .5rem .0 0 .5rem;
+	line-height: inherit;
+}
+#iconSearch {
+    margin:0;
+    border-radius:.0 .5rem .5rem 0;
+    width: 225px;
+    padding: 1px 5px;
+}
+#iconList {
+	flex: 1;
+	border: 2px groove darkblue;
+	border-radius:0 0 .5rem .5rem;
+	padding: 5px;
+	overflow-y: scroll;
+}
+#iconPreviewSection {
+	flex: 1;
+	border: 2px groove darkblue;
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+	padding:5px 10px;
+	border-radius: .5rem;
+	background-color: rgb(125,117,8,.075);
+}
+#iconPreviewSection h4 {
+	background-color:darkkhaki;
+	border-radius: .5rem .5rem 0 0;
+	/*min-height: 30px;*/
+	margin: 0 0 10px 0;
+	text-align: center;
+	font-size: clamp(.8rem,4vw,1.5rem);
+}
+.prevWrap {
+	flex: 1;
+	display: flex;
+}
+#showIcon {
+	flex: 5;
+	/*min-height: 90px;*/
+	overflow: hidden;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	
+}
+.iconPreviewing{
+	min-height: 4rem;
+	width: 100%;
+	/*flex: 2;*/
+	font-size: 4rem;
+	padding: 0;
+	position: relative;
+}
+.iconPreviewing .fas, .iconPreviewing .fab {
+	position: absolute;
+	top: 5px;
+	left: 35%;
+	/*transform:translate(-50%);*/
+}
+/*.iconPreviewing .fa-spin{*/
+/*    translate: -50%;*/
+/*}*/
+#showIconClass {
+	border: 2px groove darkkhaki;
+	border-radius: 7px;
+	font-size: 1rem;
+	padding: 4px;
+}
+#showOptions {
+	flex: 3;
+	display: none;
+	min-height: 28px;
+	position: relative;
+	text-align: center;
+	padding:4px;
+	margin: 0;
+	overflow: auto;
+	transition: height .5s
+}
+#showOptions p {
+	margin: 0;
+	background-color: darkkhaki;
+	font-size: clamp(.8rem,1vw,1.5rem);
+}
+#showOptions:hover{
+	/*height: 150px;*/
+	cursor: pointer;
+	border: none;
+}
+#iconOptions li {
+	border: none;
+	border-bottom: thin groove ;
+}
+#iconOptions li:hover {
+	cursor: pointer;
+	background-color:darkkhaki;
+}
+#iconOptions{
+	border: thin solid;
+	padding: 0;
+	margin: 0;
+}
+/* Custom Icon Animation*/
+.fa-pulse {
+	-webkit-animation: fa-pulse 1s infinite linear;
+	      animation: fa-pulse 1s infinite linear; }
+@keyframes fa-pulse {
+	0% {font-size: 4rem; }
+	50% {font-size: 4.5rem; }
+	100% {font-size: 4rem; }
+}
+/* End of Custom Icon Animation*/
+
+/*============================================*/
+/* fa-icons.html > main>.iconDivs  Settings      */
+/*============================================*/
+.iconsWrap, .documentsWrap {
+	overflow: auto;
+	position: relative;
+	padding-left: 5px;
+}
+.iconsLedger {
+	background-color: lightgray;
+	padding: 2px 10px;
+}
+.iconDivs {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 10px;
+    grid-row-gap: 10px;
+    overflow: auto;
+}
+.iconDivs p {
+	margin: 0;
+	padding: 0;
+}
+.iconDivs div {
+    width: 175px;
+    background-color: darkkhaki;
+    border: 4px inset darkblue;
+    border-radius: .5rem;
+    position: relative;
+    padding: 10px;
+    font-size: 1.25rem;
+    transition: all .25s;
+}
+.iconDivs div:hover {
+	font-size: 1.75rem;
+	color:yellow;
+	cursor: pointer;
+	
+}
+.iconSpec .fab {
+    /* position: relative; */
+    /* left: -20px; */
+}
+
+.iconSpec {
+	height: 40px;
+	display: flex;
+	justify-content:space-evenly;
+	align-items: center;
+}
+span.fa-close {
+	font-weight: bolder;
+	border: thick solid black;
+	line-height: .75;
+	font-size: 1.75rem;
+}
+div .active {
+    background-color: rgb(100,149,237,.2);
+    font-size: 1.75em;
+}
+.active>p:first-child{
+	font-size: 1.75rem;
+}
+.icon-label {
+	font-size: 1rem;
+}
+
+/* Documentation (fa-documents.html)*/
+
+/*======================================*/
+/* Section .documentsWrap  Settings      */
+/*======================================*/
+ #docs-aside {
+ 	display: flex;
+ 	flex-direction: column;
+ 	align-items: center;
+ 	justify-content: space-between;
+ 	row-gap: 20px;
+ 	overflow-y: scroll;
+ }
+ #docs-aside>div {
+ 	border: 2px groove darkkhaki;
+ 	border-radius: 7px;
+ 	flex: 1;
+ 	padding: 10px;
+ 	width: 80%;
+ 	text-align: center;
+ 	line-height:1rem;
+ }
+ #docs-aside button {
+ 	width: 150px;
+ }
+ #docs-aside button:hover {
+ 	background-color:darkgray;
+ 	cursor: pointer
+ }
+ #docs-aside p {
+ 	padding-bottom: 5px;
+ }
+.documentsWrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.docFrame {
+	width: 100%;
+	background-color: yellow;
+}
+/*===============================*/
+/*    Main section Settings      */
+/*===============================*/
+footer {
+	padding: 0 20px;
+	border-top: thin solid cornflowerblue;
+}

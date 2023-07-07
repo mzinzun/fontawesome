@@ -1,0 +1,128 @@
+
+/*======================================================*/
+/*      Overview page(index.html): Global Settings      */
+/*======================================================*/
+
+*,::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+a, buttom, ul, li {
+  transition: all .25s;
+}
+code {
+  padding: 2px;
+  padding-left: 10px;
+}
+.fa-code {
+  border: thin inset gray;
+  border-radius: 5px;
+  padding: 2px;
+  background-color: gray;
+}
+body {
+    background-color: rgb(189,183,107,.05);
+}
+.wrapper {
+  width: 95vw;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 20px 40px;
+  display: grid;
+  grid-template-rows: 120px 1fr 50px;
+}
+/*==========================================*/
+/*      Overview page: Header Settings      */
+/*==========================================*/
+  
+header {
+  border-bottom:  2px groove silver;
+  padding-bottom: 30px;
+  display: flex;
+  align-items: center;
+}
+.title {
+  font-size: 48px;
+  letter-spacing: .5rem;
+  text-align: center;
+}
+.headerLeft,.headerMiddle,.headerRight {
+  height: 100%;
+  align-items: center;
+  display: flex;
+  /*border: thin solid;*/
+}
+.headerLeft {
+  flex: 1;
+}
+.headerLeft i {
+  font-size: 72px;
+}
+.headerMiddle {
+  flex: 5;
+  justify-content: center;
+}
+.headerRight {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  /*flex-wrap: wrap;*/
+}
+.headerRight a {
+  border: 3px outset;
+  min-width:130px;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+  font: 1rem 'sans-serif';
+  font-weight: bold;
+  padding: 5px;
+  background-color: lightgray;
+  border-radius: 7px;
+}
+.headerRight a:hover {
+  background-color: gray;
+  color: silver;
+}
+/*========================================*/
+/*      Overview page: Main Settings      */
+/*========================================*/
+
+main {
+  padding: 50px 10% 10px 10%;
+  font: 1.5rem "sans-serif";
+  letter-spacing: .25em;
+  line-height: 1.5;
+}
+main>h4 {
+  border-bottom: thin solid;
+}
+.fa-desc {
+  font: 1.5rem "sans-serif";
+  letter-spacing: .25em;
+  line-height: 1.5;
+  padding: 20px 0;
+}
+main>p {
+  float: left;
+  font: 3.5rem Fjord;
+  margin: 0;padding: 0;
+  margin-top: 18px;
+  margin-right: 3px;
+}
+.examples {
+  font-size: 1.10rem;
+  line-height: 2rem;
+  padding:20px;
+  margin: 40px 0;
+  background: lightgray;
+  border: 5px groove gray;
+}
+.result {
+  padding: 4px;
+  font-size: 18px;
+  border-radius: 5px;
+  color: green;
+}

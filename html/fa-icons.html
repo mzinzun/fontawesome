@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>FontAwesome Icons</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href='../css/main.css'>
+</head>
+<body>
+	<div class='container-fluid wrapper'>
+		<header class='row'>
+			<div class='headerLeft'>
+				<div class='h1contain'>
+					<h1 class='headerLogo1'>
+						<span class="fab fa-font-awesome">
+						</span>FontAwesome Ic<span class='fas fa-globe-americas fa-spin'></span>ns</h1>
+					<h1 class='headerLogo2'><a href='../index.html' target='_self'>
+						<span class="fab fa-font-awesome">
+						</span>FontAwesome Ic<span class='fas fa-globe-americas fa-spin'></span>ns</a>
+					</h1>
+				</div>
+			</div>
+			<div class='headerRight'>
+				<a href='fa-documents.html' target='_self'>Documentation</a>
+				<a href='../index.html' target='_self'>Overview</a>
+			</div>
+		</header>
+		<main>
+			<aside>
+				<div class='menuItems'>
+					<h3 class='text-center'>Menu of Icons</h3>
+					<div class='iconSearch'>
+						<span class='fa fa-search'></span>
+						<input type='text' id="iconSearch" placeholder="Search for icon" />
+					</div>
+					<select id='iconList' size="12"></select>
+					<div id=iconPreviewSection>
+						<h4>Icon Preview</h4>
+						<div class='prevWrap'>
+							<div id='showIcon'>
+							</div>
+							<div id='showOptions'>
+								<p>OPTIONS <span class='fas fa-chevron-down'></span></p>
+								<ul id='iconOptions'>
+									<li name='rotate180' value='rotate-90'>rotate 90</li>
+									<li name='rotate-180' value='rotate-180'>rotate 180</li>
+									<li name='spin' value='spin'>spin</li>
+									<li name='resize' value='resize'>custom(pulse)</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</aside>
+			<section class=' iconsWrap d-flex flex-column'>
+				<p class='iconsLedger '><b>Ledger:</b>
+					FontAwesome icons require a prefix class (see Documentation). For the icons displayed below:<br>
+					<span style='color: red'>Red </span>icons are Brands and require 'fab' class.<br>
+					<span style='color: darkblue'>Blue</span> icons are Solid and require 'fas' class.<br>
+					<span class="fas fa-close"></span>: no icon for this color coded prefix
+				</p>
+				<section class='iconDivs' id='iconDivs'></section>
+			</section>
+			<a id='iconSelect' style='display:none' href="">for icon focus</a>
+		</main>
+		<footer></footer>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	<script type='text/javaScript' src="../js/data.js"></script>
+	<script type='text/javaScript' src="../js/icons.js"></script>
+</body>
+</html>

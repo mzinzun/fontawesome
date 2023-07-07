@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>FontAwesome Documentation</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href='../css/main.css'>
+</head>
+<body>
+	<div class='container-fluid wrapper'>
+		<header >
+			<div class='headerLeft'>
+				<div class='h1contain'>
+					<h1 class='headerLogo1 -topLayer'>
+						<span class="fab fa-font-awesome">
+						</span>FontAwesome Ic<span class='fas fa-globe-americas fa-spin'>
+						</span>ns
+					</h1>
+					<h1 class='headerLogo2'><a href='../index.html' target='_self'>
+						<span class="fab fa-font-awesome">
+						</span>FontAwesome Ic<span class='fas fa-globe-americas fa-spin'></span>ns</a>
+					</h1>
+				</div>
+			</div>
+			<div class='headerRight'>
+				<a href='fa-icons.html' target='_self'>Icon Library</a>
+				<a href='../index.html' target='_self'>Overview</a>
+			</div>
+		</header>
+		<main>
+			<aside id='docs-aside'>
+				<h4>Documentation PDFs</h4>
+				<div>
+					<p>Covers the basics for setting FA and using classes</p>
+					<button type='button' pdfSource='FA'>Using FA</button>
+				</div>
+				<div>
+					<p>Covers icon animations including spin. Mostly available in ver 6+</p>
+					<button type='button' pdfSource='fa-animate'>Animating Icons</button>
+				</div>
+				<div>
+					<p>Covers how to rotate, flip, or mirror icons</p>
+					<button type='button' pdfSource='fa-rotate'>Rotating Icons</button>
+				</div>
+				<div>
+					<p>Covers the different classes used for sizing icons</p>
+					<button type='button' pdfSource='fa-size'>Sizing Icons</button>
+				</div>
+				<div>
+					<p>Covers icon animations including spin. Mostly available in ver 6+</p>
+					<button type='button' pdfSource='fa-custom'>Customizing Icons</button>
+				</div>
+				<div>
+					<p>Use icons as decorative list bullets</p>
+					<button type='button' pdfSource='fa-list'>Icons In Lists</button>
+				</div>
+			</aside>
+			<section class='documentsWrap'>
+				<div class='docFrame'>
+					<base target="_blank">
+					<iframe
+						id="fa-document"
+						title="Document Heading"
+						src="../media/FA.pdf" >
+					</iframe>
+				</div>
+			</section>
+		</main>
+		<footer></footer>
+	</div>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	<script type='text/javascript' src='../js/fa-documents.js'></script>
+</body>
+</html>
