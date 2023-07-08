@@ -243,12 +243,16 @@ aside {
 	font-size: 4rem;
 	padding: 0;
 	position: relative;
+	display: flex;
+	justify-content: center;
 }
 .iconPreviewing .fas, .iconPreviewing .fab {
-	position: absolute;
+	/* position: absolute;
 	top: 5px;
-	left: 35%;
+	left: 35%; */
 	/*transform:translate(-50%);*/
+	flex: 1;
+	text-align: center;
 }
 /*.iconPreviewing .fa-spin{*/
 /*    translate: -50%;*/
@@ -357,9 +361,11 @@ aside {
 }
 span.fa-close {
 	font-weight: bolder;
-	border: thick solid black;
+	border: 3px solid red;
+	color: red;
 	line-height: .75;
 	font-size: 1.75rem;
+	padding: 0 !important;
 }
 div .active {
     background-color: rgb(100,149,237,.2);
