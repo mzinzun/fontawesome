@@ -131,6 +131,7 @@ header {
 	left: 0;
 	background: linear-gradient(119deg, goldenrod 45px, #ffed89 65px,goldenrod 85px);
     background-position-x: -60px;
+	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	animation: 10s ease-in .1s infinite colors;
@@ -348,11 +349,6 @@ aside {
 	cursor: pointer;
 	
 }
-.iconSpec .fab {
-    /* position: relative; */
-    /* left: -20px; */
-}
-
 .iconSpec {
 	height: 40px;
 	display: flex;

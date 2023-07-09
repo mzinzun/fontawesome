@@ -1,6 +1,3 @@
-## Documentation
-_This code is for instructional purposes only. It should be utilized as an example in developing your own work. No part of it should be directly copied into your own project. As per TLM’s plagiarism policy, submitting or misrepresenting code or an idea as your own when it was created by someone else constitutes plagiarism._
-
 # TITLE: FontAwesome Documentation Resource (FDR)
 
 # Description:
