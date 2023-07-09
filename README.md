@@ -1,11 +1,10 @@
 # TITLE: FontAwesome Documentation Resource (FDR)
+## To use FDR click link: https://mzinzun.github.io/fontawesome/
 
 # Description:
  FDR is a single source for FontAwesome that includes an overview of it’s use, a page that has pdf’s of detailed features and how to use them, and an icon library students can scan or search. The library allows you to search icon names and see what the icons look like. The pdf’s can be saved to the student’s computer.  The purpose of FDR is to help the student effectively make use of Fontawsome icons and have access to the icon library while developing projects for WDF and MERN courses.
 
-# How To start and use FDR:
-
-After downloading the FDR folder.  open the index.html file in your chrom browser.
+# How To use FDR:
 
 1. The Overview page explains What FontAwesome is and basic instructions how to add icons to your web page.
     The Overview page contains links to the Documentaion page and the Icon Library.
