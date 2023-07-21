@@ -4,8 +4,8 @@ window.onload = function () {
     const temp = (start.split('.')).map(item => item.slice(0, item.indexOf(':')));
     const data1 = temp.filter(el => (!(el.includes('webfonts'))));
     const data = (data1.filter(el => (el !== ''))).sort();
-    // console.log('data: ',data);
     var iconToPreview = '';
+    var iconToPreviewClass = ''
     var searchList;
     // =================== Function Declarations ===================
 
@@ -14,8 +14,6 @@ window.onload = function () {
         const divTarget = '#div' + el.innerText;
         $('div').removeClass('active');
         $(divTarget).addClass('active');
-        // show selected Icon in preview window
-        viewIcon(el.innerText);
     }
     // function to set 'focus' for icon selected from search list
     function setIconFocus(e) {
@@ -23,19 +21,21 @@ window.onload = function () {
         const value = '#div' + e.target.value;
         // move page to display icon selected from icons search list in icon library
         window.location.href = value;
-        // $("#iconSelect").attr('href', value);
         setActive(e.target);
     }
     // function to place icon to view in Previw window
-    function viewIcon(icon) {
+    function viewIcon(iconClass) {
+        let icon = iconClass.slice(4,);
+        console.log('icon class to use:', iconClass);
+        console.log('icon to use:', icon);
         $('#showIcon').html(`
         <div class='iconPreviewing'>
-            <i id ='fas' class= "fas ${icon}"></i>
-            <i id ='fab' class= "fab ${icon}"></i>
+            <i id="previewingIcon" class= "${iconClass}"></i>
         </div>
-        <p id ='showIconClass'>${icon}</p>
+        <p id ='showIconClass'>${iconClass}</p>
         `);
         iconToPreview = icon;
+        iconToPreviewClass = iconClass;
         $('#showOptions').fadeIn();
     }
     // function to manage auto-fill for search list
@@ -48,38 +48,30 @@ window.onload = function () {
         subData.forEach(icon => { $('#iconList').append(`<option id=${icon} value=${icon}>${icon}</option>`) });
     }
     // function to add selected option to icon setting in preview window
-    function addIconOption(e, iconPreviewSection) {
+    function addIconOption(e, textClass) {
         let el = e.target;
-        let textClass = iconPreviewSection;
-        $('#fas').removeClass();
-        $('#fab').removeClass();
-        $('#fas').addClass('fas');
-        $('#fab').addClass('fab');
-        $('#fas').addClass(iconPreviewSection);
-        $('#fab').addClass(iconPreviewSection);
+        $('#showIconClass').text('');
+        console.log('class to remove', textClass);
+        $('#previewingIcon').removeClass();
         switch (el.attributes.value.value) {
+            case ('normal'):
+                $('#showIconClass').text(textClass);
+                $('#previewingIcon').addClass(textClass);
+                break;
             case ('rotate-90'):
-                $('#fas').addClass('fa-rotate-90');
-                $('#fab').addClass('fa-rotate-90');
-                $('#showIconClass').text('');
                 $('#showIconClass').text(textClass + ' fa-rotate-90');
+                $('#previewingIcon').addClass(textClass + ' fa-rotate-90');
                 break;
             case ('rotate-180'):
-                $('#fas').addClass('fa-rotate-180');
-                $('#fab').addClass('fa-rotate-180');
-                $('#showIconClass').text('');
+                $('#previewingIcon').addClass(textClass + ' fa-rotate-180');
                 $('#showIconClass').text(textClass + ' fa-rotate-180');
                 break;
             case ('spin'):
-                $('#fas').addClass('fa-spin');
-                $('#fab').addClass('fa-spin');
-                $('#showIconClass').text('');
+                $('#previewingIcon').addClass(textClass + ' fa-spin');
                 $('#showIconClass').text(textClass + ' fa-spin');
                 break;
-            case ('resize'):
-                $('#fas').addClass('fa-pulse');
-                $('#fab').addClass('fa-pulse');
-                $('#showIconClass').text('');
+            case ('pulse'):
+                $('#previewingIcon').addClass(textClass + ' fa-pulse');
                 $('#showIconClass').text(textClass + ' fa-pulse');
                 break;
             default:
@@ -87,7 +79,6 @@ window.onload = function () {
         }
     }
     function handleIconSelection(e) {
-        // console.log('clicked:', e.currentTarget.id);
         // determine which element selected and point to it's 'icon-label element
         setActive(e.currentTarget.children[1]);
         setAutoFill(e.currentTarget.children[1]);
@@ -101,7 +92,10 @@ window.onload = function () {
         // Create and add IconDivs div elements to display icon library
         data.forEach(item => (item === '') || $('#iconDivs').append(`
     <div id = "div${item}" class='iconItem'>
-        <p class='iconSpec' ><i class='fas ${item}'></i><i class='fab ${item}' ></i></p>
+        <p class='iconSpec'>
+            <i class='fas ${item} '></i>
+            <i class='fab ${item}' ></i>
+        </p>
         <p class='icon-label'>${item}</p>
     </div>`
         ));
@@ -113,18 +107,19 @@ window.onload = function () {
 
     }
 
-
-
     // =================== startUp executions ===================
     atStartUp();
-
-
 
     // =================== Event Listeners ===================
 
     $('#iconList').on('click', e => setIconFocus(e));
     $("#iconSearch").on('keyup', e => setAutoFill(e.target));
     $('#iconDivs>div').on('click', (e) => handleIconSelection(e));
-    $('#iconOptions').on('click', e => addIconOption(e, iconToPreview));
+    $('#iconOptions').on('click', e => addIconOption(e, iconToPreviewClass));
+    $('.iconSpec').on('click', e => {
+        console.log('iconSpec <p> element clicked:', e.target);
+        // show selected Icon in preview window
+        viewIcon(e.target.attributes.class.value);
+    })
     // $('#iconList').on('active', e => e.target.focus() );
 }; // end of onload
