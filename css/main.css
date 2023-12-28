@@ -263,6 +263,7 @@ aside {
 	border-radius: 7px;
 	font-size: 1rem;
 	padding: 4px;
+	position: relative;
 }
 #showOptions {
 	flex: 3;
@@ -303,6 +304,15 @@ aside {
 	border-radius: 5px;
 	background-color: rgba(0, 0, 0,.3);
 }
+#toClipBoard {
+	position: absolute;
+	top: 0;
+	right: 0;
+	transform: translate(50%,-50%);
+	color: black;
+	border: thin solid;
+}
+
 /* Custom Icon Animation*/
 .fa-pulse {
 	-webkit-animation: fa-pulse 1s infinite linear;

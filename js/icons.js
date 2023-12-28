@@ -34,6 +34,7 @@ window.onload = function () {
         </div>
         <p id ='showIconClass'>${iconClass}</p>
         `);
+        console.log('the text to add to clipBoard:', $('#showIconClass').text());
         iconToPreview = icon;
         iconToPreviewClass = iconClass;
         $('#showOptions').fadeIn();
@@ -77,6 +78,8 @@ window.onload = function () {
             default:
                 break;
         }
+        console.log('the text to add to clipBoard:', $('#showIconClass').text());
+
     }
     function handleIconSelection(e) {
         // determine which element selected and point to it's 'icon-label element
@@ -99,6 +102,7 @@ window.onload = function () {
         <p class='icon-label'>${item}</p>
     </div>`
         ));
+       
         $('#iconSearch').attr('value', 'a');
         setTimeout(() => {
             $('#iconSearch').attr('value', '');
